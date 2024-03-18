@@ -22,10 +22,11 @@ STEP 6: Use zscore of to remove outliers
 
 ## Coding and 
 # 1) Read and display DataFrame
+```
 import pandas as pd
 df=pd.read_csv('/content/SAMPLEDS.csv')            
 df
-
+```
 # 2) Display head
 df.head()
    
@@ -57,13 +58,17 @@ df.isnull().sum()
 
 
 # 9) Drop the Null values
+```
 x=df.dropna(how='any')
 x
+```
 
 
 # 10) Drop the Null values in Total
+```
 tot=df.dropna(subset=['TOTAL'],how='any')
 tot
+```
     
 
 # 11) FIll the Null values
@@ -80,14 +85,17 @@ df.head()
 
 
 # 14) Final output
+```
 for x in df.index:
   if df.loc[x,"AVG"]>100:
     df.drop(x,inplace=True)
 df
+```
     
 
 # 15)Cut and paste portion of image:
- import cv2
+```
+import cv2
 image=cv2.imread('Deepika.jpg',1)
 image=cv2.resize(image,(400,400))
 tag =image[150:200,110:160]
@@ -95,6 +103,7 @@ image[110:160,150:200] = tag
 cv2.imshow('partimage1',image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
 # OUTPUT:
 
 
